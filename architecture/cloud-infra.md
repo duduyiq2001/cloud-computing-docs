@@ -1,5 +1,20 @@
 # Cloud Infrastructure (AWS + EKS)
 
+## High-Level Overview
+
+```mermaid
+graph LR
+    Users[Users] --> ALB[ALB]
+    ALB --> Deploy[Deployment<br/>Rails x2]
+    Deploy --> RDS[(RDS<br/>PostgreSQL)]
+    Deploy --> SendGrid[SendGrid]
+    DD[DaemonSet<br/>Datadog] -.-> Deploy
+    Jenkins[Jenkins] --> DockerHub[DockerHub]
+    Jenkins --> Deploy
+```
+
+---
+
 ## Architecture Overview
 
 ```mermaid
